@@ -1,3 +1,6 @@
-export interface testing {
-    abc: string;
+export interface Guest {
+    name: string,
+    phone: number,
+    email: string,
+    status: string
 }

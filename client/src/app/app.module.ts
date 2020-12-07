@@ -20,6 +20,7 @@ import { AppComponent } from './app.component';
 import { MainComponent } from './components/main.component';
 import { FormComponent } from './components/form.component';
 import { DetailComponent } from './components/detail.component';
+import { ApiService } from './api.service';
 //
 
 @NgModule({
@@ -40,7 +41,7 @@ import { DetailComponent } from './components/detail.component';
     FlexLayoutModule,
     HttpClientModule,
   ],
-  providers: [{provide: MAT_DATE_LOCALE, useValue: 'en-GB'}, StorageDatabase],
+  providers: [{provide: MAT_DATE_LOCALE, useValue: 'en-GB'}, StorageDatabase, ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

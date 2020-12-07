@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../api.service';
+import { Guest } from '../models';
 
 @Component({
   selector: 'app-main',
@@ -6,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main.component.css']
 })
 export class MainComponent implements OnInit {
-
-  constructor() { }
+  data:Guest[] = []
+  constructor(private apiSvc: ApiService) { }
 
   ngOnInit(): void {
+    this.apiSvc.getData()
+    .then (results => {
+      this.data = results;
+      console.info(this.data)
+    })
   }
 
 }
